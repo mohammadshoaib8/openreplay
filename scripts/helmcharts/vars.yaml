@@ -93,15 +93,15 @@ ingress-nginx: &ingress-nginx
       use-gzip: true
       load-balance: ewma
       enable-real-ip: true
-      # Enable LB forwarded protocol
+      #Enable LB forwarded protocol
       # Ref: https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap/#use-forwarded-headers
       # https://github.com/nginxinc/kubernetes-ingress/issues/1284#issuecomment-872869354
-      # use-forwarded-headers: true
+       use-forwarded-headers: true
       # Ref: https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap/#max-worker-connections
       max-worker-connections: 0
       # SSL redirection
-      ssl-redirect: false
-      force-ssl-redirect: false
+      ssl-redirect: true
+      force-ssl-redirect: true
       proxy-body-size: 10m
 
 # Application specific variables
